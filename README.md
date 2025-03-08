@@ -1,4 +1,4 @@
-# padel management system
+# Padel management system
 
 > A padel management system is an application designed to help employees manage their business in a more organized way, by keeping track of upcoming matches and tournaments all while storing teams, players, employees, and equipment information efficiently. 
 
