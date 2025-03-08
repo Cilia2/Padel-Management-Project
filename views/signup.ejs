@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001e6c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            height: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            flex: 1.3;
+            background-color: #0078FF;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            color: white;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .form-container button {
+            padding: 12px;
+            font-size: 18px;
+            background-color: #003b8b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .image-container {
+            flex: 1;
+            background-color: #233687;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .image-container img {
+            max-width: 110%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .image-container h2 {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Sign up as an Employee</h2>
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label for="empName">Name:</label>
+                    <input type="text" id="empName" name="empName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="empNumber">Phone Number:</label>
+                    <input type="text" id="empNumber" name="empNumber" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position:</label>
+                    <input type="text" id="position" name="position" placeholder="Enter your position" required>
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary:</label>
+                    <input type="number" id="salary" name="salary" placeholder="Enter your salary" required>
+                </div>
+                <div class="form-group">
+                    <label for="empEmail">Email:</label>
+                    <input type="email" id="empEmail" name="empEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="empPass">Password:</label>
+                    <input type="password" id="empPass" name="empPass" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="/images/3.png" alt="Paddle image">
+        </div>
+    </div>
+</body>
+</html>

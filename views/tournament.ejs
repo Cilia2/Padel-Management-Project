@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournaments</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #0056b3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            padding-left: 20px;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #004494;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+        }
+
+        .main-content h1 {
+            font-size: 36px;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            margin-right: 10px;
+        }
+
+        /* Table */
+        .table {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .table td, .table th {
+            vertical-align: middle;
+        }
+
+        .btn-sm {
+            font-size: 14px;
+            padding: 5px 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/" class="home-btn">Back to Home</a>
+        <a href="/api/employee">Employees</a>
+        <a href="/api/player">Players</a>
+        <a href="/api/team">Teams</a>
+        <a href="/api/equipment">Equipment</a>
+        <a href="/api/tournament">Tournaments</a>
+        <a href="/api/match">Matches</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Tournaments</h1>
+
+        <!-- Add Tournament -->
+        <a href="/api/tournament/add-form" class="btn btn-success">Add Tournament</a>
+
+        <!-- Search Form -->
+        <form method="GET" action="/api/tournament/search" class="form-inline mb-3">
+            <input type="number" name="tourId" class="form-control mr-2" placeholder="Enter tournament ID" required>
+            <button type="submit" class="btn btn-info">Search</button>
+        </form>
+
+        <!-- Table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < tournaments.length; i++) { %>
+                <tr>
+                    <td><%= tournaments[i].tourId %></td>
+                    <td><%= tournaments[i].tourName %></td>
+                    <td><%= tournaments[i].location %></td>
+                    <td><%= tournaments[i].startDate %></td>
+                    <td><%= tournaments[i].endDate %></td>
+                    <td>
+                        <a href="/api/tournament/edit-form/<%= tournaments[i].tourId %>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/api/tournament/delete/<%= tournaments[i].tourId %>" class="btn btn-danger btn-sm">Del.</a>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html> 
+
+<head>
+    <link href="/css/style.css" rel="stylesheet" type="text-css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Tournaments</title>
+</head>
+
+<body>
+            <div class="container">
+                <a href="/" class="btn btn-primary">Back</a>   
+                
+                Add Tournament
+                <a href="/api/tournament/add-form" class="btn btn-success">Add Tournament</a>
+                Search for Tournament buy Id
+                <form method="GET" action="/api/tournament/search" class="form-inline mb-3">
+                    <input type="number" name="tourId" class="form-control mr-2" placeholder="Enter tournament ID" required>
+                    <button type="submit" class="btn btn-info">Search</button>
+                </form>  
+
+                <table class="table table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>         
+                        <th>Start Date</th>
+                        <th>End date</th> 
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i < tournaments.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <%= tournaments[i].tourId %>
+                                </td>
+                                <td>
+                                    <%= tournaments[i].tourName %>
+                                </td>
+                                <td>
+                                    <%= tournaments[i].location %>
+                                </td>
+                                <td>
+                                    <%= tournaments[i].startDate %>
+                                </td>
+                                <td>
+                                    <%= tournaments[i].endDate %>
+                                </td>
+                                <td>
+                                    <a href="/api/tournament/edit-form/<%= tournaments[i].tourId %>" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="/api/tournament/delete/<%= tournaments[i].tourId %>" class="btn btn-danger btn-sm">Del.</a>
+                                </td>
+    
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+</body>
+
+</html> -->

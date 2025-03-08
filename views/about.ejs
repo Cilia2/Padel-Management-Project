@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+        background: linear-gradient(180deg, #007bff, #001f4d); /* Removed the bottom gradient */
+        color: white;
+        margin: 0;
+        padding: 50px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Navbar at the top-right */
+    nav {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 40px; /* Space between links */
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 90px;
+    }
+
+    .text-section {
+      max-width: 50%;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.2em;
+    }
+
+    .image-section {
+      max-width: 40%;
+    }
+
+    .image-section img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="home-btn">Back to Home</a>
+    <a href="/signin">Sign in</a>
+    <a href="/signup">Sign up</a>
+  </nav>
+  <div class="container">
+    <div class="text-section">
+      <h1>About Us</h1>
+      <p>
+        The Padel Management System is a comprehensive application crafted to empower 
+        padel business owners with effective tools for managing and organizing their data.
+        This system addresses these needs, providing a centralized platform to efficiently 
+        handle all aspects of data management at a lower cost and with greater ease. 
+        With the Padel Management System, users can effortlessly add, delete, and modify data, 
+        navigating through an intuitive interface. The application also offers robust search functionality, 
+        enabling users to locate specific information quickly. By streamlining data management, 
+        businesses can enhance client engagement and build stronger connections with players.
+        Aligned with the dynamic growth of the padel industry, this system helps businesses 
+        thrive by making management more efficient, customer-focused, and adaptable to future needs.
+      </p>
+    </div>
+    <div class="image-section">
+      <img src="/images/6.png" alt="People Illustration">
+    </div>
+  </div>
+</body>
+</html>
